@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import { LoginForm } from './components/LoginForm/LoginForm'
-import './App.css'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import  LoginForm  from './components/LoginForm/LoginForm.jsx';
+import  HomePage  from './components/HomePage/Homepage.jsx';
 
-function App() {
-  const [count, setCount] = useState(0)
-
+function App () {
   return (
-    <>
-      <div>
-      <LoginForm />
-      </div>
-    </>
-  )
+    <BrowserRouter>
+    <Routes>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="/HomePage" element={<HomePage />} />     
+    </Routes>
+    </BrowserRouter> 
+  );
 }
 
-export default App
+export default App;
